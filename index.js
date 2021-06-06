@@ -50,7 +50,7 @@ const craw = async () => {
 
     console.log('cron-odd-run');
 
-    const browser = await chromium.launch({ headless: false, args: [
+    const browser = await chromium.launch({ headless: true, args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
@@ -98,7 +98,7 @@ const craw = async () => {
 
         if (live) data.push(live)
         if (normal) data.push(normal)
-        console.log(live)
+        // console.log(data)
         if (data.length) {
 
             const strOdds = JSON.stringify(data);
