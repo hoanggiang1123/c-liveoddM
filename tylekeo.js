@@ -77,9 +77,13 @@ exports.getOdds = (dom, type) => {
                             dateTimeObj.timeStr = timeStr;
                             dateTimeObj.dateStr = dateStr;
                         }
-
-                        const multiOdds = $(row).find('.multiOdds');
-
+                        let multiOdds;
+                        if ($(row).find('.multiOdds')[0]) {
+                            multiOdds = $(row).find('.multiOdds');
+                        } else {
+                            multiOdds = $(row).find('.manyOdds');
+                        }
+                        
                         if (multiOdds && multiOdds.length) {
                             let event = {};
                             for (let k = 0; k < multiOdds.length; k++) {
