@@ -113,8 +113,10 @@ const craw = async () => {
         io.emit('SEND_ERR', []);
 
     } catch (err) {
+        console.log('loiiiii')
         console.log(err.message)
     } finally {
+        console.log('loiiiiiFN')
         if (browser) await browser.close()
     }
 };
