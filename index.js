@@ -88,7 +88,7 @@ const craw = async () => {
         await page.goto(process.env.TYLEKEO_URL, { waitUntil: 'domcontentloaded' });
 
         const [liveDom, normalDom] = await getOddContent(page);
-
+        console.log(liveDom);
         let live;
         let normal;
         let data = [];
@@ -98,7 +98,7 @@ const craw = async () => {
 
         if (live) data.push(live)
         if (normal) data.push(normal)
-        // console.log(data)
+        console.log(data)
         if (data.length) {
 
             const strOdds = JSON.stringify(data);
